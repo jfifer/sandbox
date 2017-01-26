@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(["app/classes/Portal", "angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,10 +10,13 @@ System.register(["angular2/core"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var Portal_1, core_1;
     var MyModulesClass;
     return {
         setters:[
+            function (Portal_1_1) {
+                Portal_1 = Portal_1_1;
+            },
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
@@ -21,14 +24,14 @@ System.register(["angular2/core"], function(exports_1, context_1) {
             //framework recognizes @Component annotation and knows that we are trying to create a new component
             MyModulesClass = (function () {
                 function MyModulesClass() {
+                    this.portal = new Portal_1.Portal();
+                    this.groupList = this.portal.listServerGroups({ query: "search", attr: "test" });
                 }
                 MyModulesClass = __decorate([
                     core_1.Component({
-                        selector: 'my-app'
-                    }),
-                    core_1.View({
-                        //this template value will be displayed in the browser
-                        template: '<h2>Welcome to Tutorialspoint</h2>'
+                        selector: 'my-app',
+                        templateUrl: "app/assets/partials/home.html",
+                        providers: [Portal_1.Portal]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MyModulesClass);

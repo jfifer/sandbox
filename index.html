@@ -6,11 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2-polyfills.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/angular2-polyfills.js"></script>
     <script src="https://code.angularjs.org/tools/system.js"></script>
     <script src="https://code.angularjs.org/tools/typescript.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.6/Rx.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2.dev.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/Rx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/angular2.min.js"></script>
     <script>
       System.config({
         transpiler: 'typescript',
@@ -18,7 +18,7 @@
         packages: {'app': {defaultExtension: 'ts'}},
         map: { 'app': 'app' }
       });
-      System.import('app/component_main')
+      System.import('app/modules_main')
             .then(null, console.error.bind(console));
     </script>
   </head>
